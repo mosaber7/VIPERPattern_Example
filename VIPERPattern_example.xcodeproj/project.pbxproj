@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		05B2C06526DF9B280043E134 /* VIPERPattern_example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B2C06326DF9B280043E134 /* VIPERPattern_example.xcdatamodeld */; };
 		05B2C06726DF9B2A0043E134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B2C06626DF9B2A0043E134 /* Assets.xcassets */; };
 		05B2C06A26DF9B2A0043E134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B2C06826DF9B2A0043E134 /* LaunchScreen.storyboard */; };
+		05B2C07926DFA32E0043E134 /* ViperRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B2C07826DFA32E0043E134 /* ViperRouter.swift */; };
+		05B2C07C26DFA33B0043E134 /* ViperRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B2C07B26DFA33B0043E134 /* ViperRequest.swift */; };
+		05B2C08026DFAD480043E134 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B2C07F26DFAD480043E134 /* Model.swift */; };
 		13E80FB3305DA1E10D9E43AF /* Pods_VIPERPattern_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0AC5B516AD84BDC3DD309A /* Pods_VIPERPattern_example.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		05B2C06626DF9B2A0043E134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B2C06926DF9B2A0043E134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B2C06B26DF9B2A0043E134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05B2C07826DFA32E0043E134 /* ViperRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperRouter.swift; sourceTree = "<group>"; };
+		05B2C07B26DFA33B0043E134 /* ViperRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperRequest.swift; sourceTree = "<group>"; };
+		05B2C07F26DFAD480043E134 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		39ED2FA540FEE68450FF8327 /* Pods-VIPERPattern_example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERPattern_example.release.xcconfig"; path = "Target Support Files/Pods-VIPERPattern_example/Pods-VIPERPattern_example.release.xcconfig"; sourceTree = "<group>"; };
 		4A0AC5B516AD84BDC3DD309A /* Pods_VIPERPattern_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERPattern_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C33B2A42D70EC1D0443803 /* Pods-VIPERPattern_example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERPattern_example.debug.xcconfig"; path = "Target Support Files/Pods-VIPERPattern_example/Pods-VIPERPattern_example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 		05B2C05926DF9B270043E134 /* VIPERPattern_example */ = {
 			isa = PBXGroup;
 			children = (
+				05B2C07E26DFAD360043E134 /* Models */,
+				05B2C07626DFA30B0043E134 /* Gateways */,
 				05B2C05A26DF9B270043E134 /* AppDelegate.swift */,
 				05B2C05C26DF9B270043E134 /* SceneDelegate.swift */,
 				05B2C05E26DF9B270043E134 /* ViewController.swift */,
@@ -75,6 +83,23 @@
 				05B2C06326DF9B280043E134 /* VIPERPattern_example.xcdatamodeld */,
 			);
 			path = VIPERPattern_example;
+			sourceTree = "<group>";
+		};
+		05B2C07626DFA30B0043E134 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				05B2C07826DFA32E0043E134 /* ViperRouter.swift */,
+				05B2C07B26DFA33B0043E134 /* ViperRequest.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		05B2C07E26DFAD360043E134 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B2C07F26DFAD480043E134 /* Model.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5092D2ACD73D81ACA713E770 /* Frameworks */ = {
@@ -91,7 +116,6 @@
 				D0C33B2A42D70EC1D0443803 /* Pods-VIPERPattern_example.debug.xcconfig */,
 				39ED2FA540FEE68450FF8327 /* Pods-VIPERPattern_example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,8 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B2C08026DFAD480043E134 /* Model.swift in Sources */,
+				05B2C07C26DFA33B0043E134 /* ViperRequest.swift in Sources */,
 				05B2C06526DF9B280043E134 /* VIPERPattern_example.xcdatamodeld in Sources */,
 				05B2C05F26DF9B270043E134 /* ViewController.swift in Sources */,
+				05B2C07926DFA32E0043E134 /* ViperRouter.swift in Sources */,
 				05B2C05B26DF9B270043E134 /* AppDelegate.swift in Sources */,
 				05B2C05D26DF9B270043E134 /* SceneDelegate.swift in Sources */,
 			);
